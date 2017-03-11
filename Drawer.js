@@ -2,7 +2,7 @@
 	var drawArc = function(posX, posY, R, fillStyle, ctx)
 	{
 		ctx.beginPath()
-		ctx.arc(posX, posY, R, Math.PI * 2)
+		ctx.arc(posX, posY, R, 0, Math.PI * 2)
 		ctx.fillStyle = fillStyle
 		ctx.fill()
 	}
