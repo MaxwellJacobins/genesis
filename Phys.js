@@ -13,7 +13,8 @@
 
 	Entity.prototype.run = function(dt)
 	{
-
+		this.vel.add(this.accel.copy().mult(dt))
+		this.pos.add(this.vel.copy().mult(dt))
 	}
 
 	Entity.prototype.render = function(worldCtx)
