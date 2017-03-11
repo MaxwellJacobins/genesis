@@ -17,7 +17,7 @@
 		ctx.stroke()
 	}
 
-	window.drawer = {
+	window.Drawer = {
 		drawArc: drawArc,
 		drawLine: drawLine
 	}
