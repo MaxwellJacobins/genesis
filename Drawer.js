@@ -1,4 +1,4 @@
-var Drawer = (function(){
+(function(){
 	var drawArc = function(posX, posY, R, fillStyle, ctx)
 	{
 		ctx.beginPath()
@@ -6,7 +6,7 @@ var Drawer = (function(){
 		ctx.fillStyle = fillStyle
 		ctx.fill()
 	}
-
+	
 	var drawLine = function(posX1, posY1, posX2, posY2, thick, strokeStyle, ctx)
 	{
 		ctx.beginPath()
@@ -17,7 +17,7 @@ var Drawer = (function(){
 		ctx.stroke()
 	}
 
-	return {
+	window.drawer = {
 		drawArc: drawArc,
 		drawLine: drawLine
 	}
