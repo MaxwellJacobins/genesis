@@ -37,8 +37,8 @@ Vec.prototype.mult = function(val)
 		this.y *= val.y
 	} else
 	{
-		this.x *= fac
-		this.y *= fac
+		this.x *= val
+		this.y *= val
 	}
 	return this
 }
@@ -51,8 +51,8 @@ Vec.prototype.div = function(val)
 		this.y /= val.y
 	} else
 	{
-		this.x /= fac
-		this.y /= fac
+		this.x /= val
+		this.y /= val
 	}
 	return this
 }
