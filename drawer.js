@@ -1,4 +1,4 @@
-var drawer = (function(){
+var Drawer = (function(){
 	var drawArc = function(posX, posY, R, fillStyle, ctx)
 	{
 		ctx.beginPath()
