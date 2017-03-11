@@ -9,6 +9,18 @@
 		this.fric = props.fric
 		this.R = props.R
 		this.col = props.col
+		this.M = props.M
+	}
+
+	Entity.prototype.addForce = function(force)
+	{
+		force.div(this.M)
+		this.accel.add(force)
+	}
+
+	Entity.prototype.resetAccel = function()
+	{
+		this.accel.mult(0)
 	}
 
 	Entity.prototype.run = function(dt)
@@ -36,6 +48,7 @@
 		props.fric = props.fric || 1
 		props.R = props.R || 3
 		props.col = props.col || "grey"
+		props.M = props.M || 1
 
 		var newEntity = new Entity(props)
 		this.entities.push(newEntity)
