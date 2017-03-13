@@ -39,6 +39,7 @@
 		this.timestep = props.timestep
 		this.gravDown = props.gravDown
 		this.drawCtx = props.drawCtx
+		this.hasBounds = props.hasBounds
 		this.entities = []
 	}
 
@@ -59,10 +60,31 @@
 	{
 		this.entities = []
 	}
+	
+	World.prototype.boundEntities = function()
+	{
+		var worldCanvas = this.drawCtx.canvas
+		for (var i in this.entities)
+		{
+			var entity = this.entities[i]
+			if (entity.pos.x > worldCanvas.width)
+			{
+				entity.pos.x = worldCanvas.width
+				entity.vel.x *= -1
+			}
+			else if (entity.pos.x < 0)
+			{
+				entity.pos.x = 0
+				entity.vel.x *= -1
+			}
+		}
+	}
 
 	World.prototype.run = function(dt)
 	{
 		dt = dt || this.timestep
+		if (this.hasBounds)
+			this.boundEntities()
 		for (var i in this.entities)
 			this.entities[i].run(dt)
 	}
